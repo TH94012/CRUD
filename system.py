@@ -173,3 +173,26 @@ def info(username, email, password, rank, victories, defeats, tot_games, id):
 ---------------------------------------
 
 ''')
+
+def management(localization, database_name):
+    data = get_data(localization, database_name)
+    header('Gerenciamento de contas!')
+    while True:
+        print('''
+1 - Mudar rank
+2 - Apagar contas
+3 - Voltar
+''')
+        option = int(input('Opção: '))
+        match option:
+            case 1:
+                print('----------------------------------------')
+                for c in data:
+                    print(F"{c['username']}".ljust(), F"{c['id']}".rjust(40))
+                pass
+            case 2:
+                pass
+            case 3:
+                return
+            case _:
+                continue
