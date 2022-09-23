@@ -186,9 +186,11 @@ def management(localization, database_name):
         option = int(input('Opção: '))
         match option:
             case 1:
-                print('----------------------------------------')
+                print('-' * 40)
                 for c in data:
-                    print(F"{c['username']}".ljust(), F"{c['id']}".rjust(40))
+                    print(F"{c['username']}".ljust(0), F"{c['id']}".rjust(40))
+                print('-' * 40)
+
                 pass
             case 2:
                 pass

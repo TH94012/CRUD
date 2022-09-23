@@ -4,9 +4,9 @@
         "email": "thiago@gmail.com",
         "password": "thiagooo",
         "rank": "admin",
-        "forca-victories": 0,
+        "forca-victories": 1,
         "forca-defeats": 0,
-        "forca-games": 0,
+        "forca-games": 1,
         "id": "0000"
     }
 ]
