@@ -1,0 +1,26 @@
+geral2 = ['BATATA', 'COMPUTADOR', 'MOUSE', 'ARVORE', 'CARRO',
+          'MOTO', 'JANELA', 'HORTA', 'INDEPENDENCIA', 'PAREDE',
+          'CONTROLE', 'FORCA', 'CELULAR', 'MONITOR', 'CARREGADOR',
+          'TAPETE', 'OVO', 'PROGRAMADOR', 'THIAGO', 'MELHOR',
+          'DIA', 'CAVALO', 'DESPERTADOR', 'RELOGIO', 'JABUTICABA',
+          'PYTHON', 'LINGUAGEM', 'ALMOFADA', 'MOLDURA'
+]
+
+futebol = ['BOLA', 'REDE', 'JOGADOR', 'TRAVES', 'FLAMENGO',
+           'INTERNACIONAL', 'CORINTHIANS', 'CAMPO', 'CRISTIANO RONALDO', 'MESSI',
+           'NEYMAR', 'GREMIO', 'FIFA', 'BOTAFOGO', 'SAO PAULO',
+           'PALMEIRAS'
+]
+
+casa = ['CONTROLE', 'ALMOFADA', 'RELOGIO', 'JANELA', 'CARREGADOR',
+        'PAREDE', 'TELEVISAO', 'TAPETE', 'MESA', 'SOFA',
+        'PORTA', 'PORTAO', 'MOLDURA', 'QUADRO'
+]
+
+escola = ['PAPEL', 'CADERNO', 'ESTUDO', 'MOCHILA', 'ESTOJO',
+          'APOSTILA', 'MATEMATICA', 'PORTUGUES', 'GEOGRAFIA', 'CIENCIAS',
+          'PRODUÇAO DE TEXTO', 'HISTORIA'
+
+]
+
+geral = geral2 + futebol + casa + escola
