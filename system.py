@@ -1,5 +1,5 @@
-import json, string, random, forca
-from time import sleep
+import json, string, random
+import forca
 
 
 cyan = '\033[1;36m'
@@ -145,7 +145,7 @@ def get_index_by_id(localization, database, user_id):
             if c['id'] == user_id:
                 return i
 
-def forca(localization, database, index):
+def play_forca(localization, database, index):
     victories, defeats = forca.jogo()
     tot_games = victories + defeats
     with open(localization + database) as database_arc:
