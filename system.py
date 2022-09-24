@@ -175,15 +175,21 @@ def info(username, email, password, rank, victories, defeats, tot_games, id):
 ''')
 
 def management(localization, database_name):
-    data = get_data(localization, database_name)
-    header('Gerenciamento de contas!')
     while True:
+        data = get_data(localization, database_name)
+        header('Gerenciamento de contas!')
         print('''
 1 - Mudar rank
 2 - Apagar contas
 3 - Voltar
 ''')
-        option = int(input('Opção: '))
+        while True:
+            try:
+                option = int(input('Opção: '))
+                if 0 < option < 4:
+                    break
+            except:
+                continue
         match option:
             case 1:
                 print('*' + '-' * 57 + '*')
@@ -197,7 +203,13 @@ def management(localization, database_name):
 1 - admin
 2 - normal
 ''')
-                option_rank = int(input('Opção: '))
+                while True:
+                    try:
+                        option_rank = int(input('Opção: '))
+                        if 0 <= option_rank < len(data):
+                            break
+                    except:
+                        continue
                 if option_rank == 1:
                     data[option2]['rank'] = 'admin'
                 elif option_rank == 2:
@@ -205,7 +217,28 @@ def management(localization, database_name):
                 with open(localization + database_name, 'w') as database:
                     json.dump(data, database, indent=4)
             case 2:
-                pass
+                print('*' + '-' * 57 + '*')
+                print(F'| Num |{"Nome de usuário" : ^31}|   Rank   |   ID   |')
+                print('|-----|-------------------------------|----------|--------|')
+                for l, c in enumerate(data):
+                    print(F"|  {l}  | {c['username'] : <30}|{c['rank'] : ^10}|{c['id'] : ^8}|")
+                print('*' + '-' * 57 + '*')
+                while True:
+                    try:
+                        option2 = int(input('Qual usuário você quer apagar? '))
+                        if 0 <= option_rank < len(data):
+                            break
+                    except:
+                        break
+                while True:
+                    option3 = str(input('Tem certeza? ')).strip().upper()[0]
+                    if option3 == 'N':
+                        return
+                    else:
+                        break
+                del data[option2]
+                with open(localization + database_name, 'w') as database:
+                    json.dump(data, database, indent=4)
             case 3:
                 return
             case _:

@@ -17,7 +17,10 @@ while True:
 3 - Sair do programa
 \033[m''')
     while True:
-        option1 = int(input(cyan + 'Opção: ' + yellow))
+        try:
+            option1 = int(input(cyan + 'Opção: ' + yellow))
+        except:
+            continue
         if option1 > 3:
             continue
         elif option1 < 1:
@@ -34,11 +37,10 @@ while True:
             print('''
 1 - Forca
 2 - Logout
-3 - Informações Conta
-''')
+3 - Informações Conta''')
             if rank_logged == 'admin':
-                print('''4 - Gerenciar contas
-''')
+                print('''4 - Gerenciar contas''')
+            print()
             while True:
                 try:
                     option2 = int(input('Opção: '))
@@ -48,6 +50,8 @@ while True:
                                 pass
                             else:
                                 continue
+                    else:
+                        continue
                 except:
                     continue
                 else:
@@ -62,11 +66,7 @@ while True:
                 case 3:
                     while True:
                         info(username_logged, email_logged, password_logged, rank_logged, victories_logged, defeats_logged, games_logged, id_logged)
-                        while True:
-                            voltar = str(input('Voltar? [S/N] ')).strip().upper()
-                            if voltar == 'S':
-                                break
-                        break
+                        input('Voltar ')
                 case 4:
                     management(localization, database_name)
                 case _:
