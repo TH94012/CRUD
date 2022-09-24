@@ -244,3 +244,15 @@ def management(localization, database_name):
             case _:
                 continue
 
+def get_data_logged(localization, database_name, id_logged):
+    data = get_data(localization, database_name)
+    for c in data:
+        if c['id'] == id_logged:
+            return [c['username'],
+                    c['email'],
+                    c['password'],
+                    c['rank'],
+                    c['forca-victories'],
+                    c['forca-defeats'],
+                    c['forca-games']
+]

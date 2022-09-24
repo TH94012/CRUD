@@ -59,6 +59,7 @@ while True:
             match option2:
                 case 1:
                     play_forca(localization, database_name, get_index_by_id(localization, database_name, id_logged))
+                    username_logged, email_logged, password_logged, rank_logged, victories_logged, defeats_logged, games_logged = get_data_logged(localization, database_name, id_logged)
                 case 2:
                     username_logged = email_logged = password_logged = rank_logged = victories_logged = id_logged = None
                     logged = False
