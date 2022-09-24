@@ -9,7 +9,6 @@ data = get_data(localization, database_name)
 
 logged = False
 
-
 while True:
     header('Bem vindo ao Login')
     print('''\033[1;33m

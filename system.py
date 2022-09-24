@@ -186,15 +186,26 @@ def management(localization, database_name):
         option = int(input('Opção: '))
         match option:
             case 1:
-                print('-' * 40)
-                for c in data:
-                    print(F"{c['username']}".ljust(0), F"{c['id']}".rjust(40))
-                print('-' * 40)
-
-                pass
+                print('*' + '-' * 57 + '*')
+                print(F'| Num |{"Nome de usuário" : ^31}|   Rank   |   ID   |')
+                print('|-----|-------------------------------|----------|--------|')
+                for l, c in enumerate(data):
+                    print(F"|  {l}  | {c['username'] : <30}|{c['rank'] : ^10}|{c['id'] : ^8}|")
+                print('*' + '-' * 57 + '*')
+                option2 = int(input('Qual usuário você quer trocar o rank? '))
+                print('''
+1 - admin
+2 - normal
+''')
+                option_rank = int(input('Opção: '))
+                if option_rank == 1:
+                    data[option2]['rank'] = 'admin'
+                elif option_rank == 2:
+                    data[option2]['rank'] = 'normal'
             case 2:
                 pass
             case 3:
                 return
             case _:
                 continue
+
