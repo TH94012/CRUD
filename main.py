@@ -29,7 +29,6 @@ while True:
     if option1 == 1:
         username_logged, email_logged, password_logged, rank_logged, victories_logged, defeats_logged, games_logged, id_logged = login(localization, database_name)
         logged = True
-        #print(F'{username_logged} {email_logged} {password_logged} {rank_logged} {victories_logged} {id_logged}')
         while True:
             if logged == False:
                 break
@@ -69,7 +68,8 @@ while True:
                         info(username_logged, email_logged, password_logged, rank_logged, victories_logged, defeats_logged, games_logged, id_logged)
                         input('Voltar ')
                 case 4:
-                    management(localization, database_name)
+                    management(localization, database_name, id_logged)
+                    username_logged, email_logged, password_logged, rank_logged, victories_logged, defeats_logged, games_logged = get_data_logged(localization, database_name, id_logged)
                 case _:
                     raise Exception('Você bugou o sistema!')
     elif option1 == 2:

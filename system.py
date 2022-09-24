@@ -174,7 +174,7 @@ def info(username, email, password, rank, victories, defeats, tot_games, id):
 
 ''')
 
-def management(localization, database_name):
+def management(localization, database_name, id_logged):
     while True:
         data = get_data(localization, database_name)
         header('Gerenciamento de contas!')
@@ -225,11 +225,15 @@ def management(localization, database_name):
                 print('*' + '-' * 57 + '*')
                 while True:
                     try:
+                        cant_delete = get_index_by_id(localization, database_name, id_logged)
                         option2 = int(input('Qual usuário você quer apagar? '))
-                        if 0 <= option_rank < len(data):
+                        if cant_delete == option2:
+                            print('Você não pode deletar seu usuário dessa forma.')
+                            continue
+                        if 0 <= option2 < len(data):
                             break
                     except:
-                        break
+                        continue
                 while True:
                     option3 = str(input('Tem certeza? ')).strip().upper()[0]
                     if option3 == 'N':
