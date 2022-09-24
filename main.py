@@ -68,8 +68,7 @@ while True:
                                 break
                         break
                 case 4:
-                    #funcao management
-                    pass
+                    management(localization, database_name)
                 case _:
                     raise Exception('Você bugou o sistema!')
     elif option1 == 2:

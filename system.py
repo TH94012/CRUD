@@ -202,6 +202,8 @@ def management(localization, database_name):
                     data[option2]['rank'] = 'admin'
                 elif option_rank == 2:
                     data[option2]['rank'] = 'normal'
+                with open(localization + database_name, 'w') as database:
+                    json.dump(data, database, indent=4)
             case 2:
                 pass
             case 3:
