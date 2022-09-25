@@ -73,6 +73,7 @@ while True:
                     username_logged, email_logged, password_logged, rank_logged, victories_logged, defeats_logged, games_logged = get_data_logged(localization, database_name, id_logged)
                 case 5:
                     users(localization, database_name)
+                    input('Voltar: ')
                 case _:
                     raise Exception('Você bugou o sistema!')
     elif option1 == 2:

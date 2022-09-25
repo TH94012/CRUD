@@ -192,12 +192,7 @@ def management(localization, database_name, id_logged):
                 continue
         match option:
             case 1:
-                print('*' + '-' * 57 + '*')
-                print(F'| Num |{"Nome de usuário" : ^31}|   Rank   |   ID   |')
-                print('|-----|-------------------------------|----------|--------|')
-                for l, c in enumerate(data):
-                    print(F"|  {l}  | {c['username'] : <30}|{c['rank'] : ^10}|{c['id'] : ^8}|")
-                print('*' + '-' * 57 + '*')
+                users(localization, database_name)
                 option2 = int(input('Qual usuário você quer trocar o rank? '))
                 print('''
 1 - admin
@@ -217,12 +212,7 @@ def management(localization, database_name, id_logged):
                 with open(localization + database_name, 'w') as database:
                     json.dump(data, database, indent=4)
             case 2:
-                print('*' + '-' * 57 + '*')
-                print(F'| Num |{"Nome de usuário" : ^31}|   Rank   |   ID   |')
-                print('|-----|-------------------------------|----------|--------|')
-                for l, c in enumerate(data):
-                    print(F"|  {l}  | {c['username'] : <30}|{c['rank'] : ^10}|{c['id'] : ^8}|")
-                print('*' + '-' * 57 + '*')
+                users(localization, database_name)
                 while True:
                     try:
                         cant_delete = get_index_by_id(localization, database_name, id_logged)
@@ -269,4 +259,3 @@ def users(localization, database_name):
     for l, c in enumerate(data):
         print(F"|  {l}  | {c['username'] : <30}|{c['rank'] : ^10}|{c['id'] : ^8}|")
     print('*' + '-' * 57 + '*')
-    input('Voltar: ')
