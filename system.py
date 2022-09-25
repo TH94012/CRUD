@@ -193,7 +193,10 @@ def management(localization, database_name, id_logged):
         match option:
             case 1:
                 users(localization, database_name)
-                option2 = int(input('Qual usuário você quer trocar o rank? '))
+                while True:
+                    option2 = int(input('Qual usuário você quer trocar o rank? '))
+                    if option2 < len(data):
+                        break
                 print('''
 1 - admin
 2 - normal
@@ -201,7 +204,7 @@ def management(localization, database_name, id_logged):
                 while True:
                     try:
                         option_rank = int(input('Opção: '))
-                        if 0 <= option_rank < len(data):
+                        if 0 <= option_rank < 3:
                             break
                     except:
                         continue
