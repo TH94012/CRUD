@@ -38,13 +38,14 @@ while True:
 2 - Logout
 3 - Informações Conta''')
             if rank_logged == 'admin':
-                print('''4 - Gerenciar contas''')
+                print('''4 - Gerenciar contas
+5 - Ver usuários''')
             print()
             while True:
                 try:
                     option2 = int(input('Opção: '))
-                    if 0 < option2 < 5:
-                        if option2 == 4:
+                    if 0 < option2 < 6:
+                        if option2 == 4 or option2 == 5:
                             if rank_logged == 'admin':
                                 pass
                             else:
@@ -70,6 +71,8 @@ while True:
                 case 4:
                     management(localization, database_name, id_logged)
                     username_logged, email_logged, password_logged, rank_logged, victories_logged, defeats_logged, games_logged = get_data_logged(localization, database_name, id_logged)
+                case 5:
+                    users(localization, database_name)
                 case _:
                     raise Exception('Você bugou o sistema!')
     elif option1 == 2:

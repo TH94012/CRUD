@@ -260,3 +260,13 @@ def get_data_logged(localization, database_name, id_logged):
                     c['forca-defeats'],
                     c['forca-games']
 ]
+
+def users(localization, database_name):
+    data = get_data(localization, database_name)
+    print('*' + '-' * 57 + '*')
+    print(F'| Num |{"Nome de usuário" : ^31}|   Rank   |   ID   |')
+    print('|-----|-------------------------------|----------|--------|')
+    for l, c in enumerate(data):
+        print(F"|  {l}  | {c['username'] : <30}|{c['rank'] : ^10}|{c['id'] : ^8}|")
+    print('*' + '-' * 57 + '*')
+    input('Voltar: ')
